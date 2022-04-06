@@ -11,23 +11,23 @@ clusterDomain: nip.io
 registry: &defaultRegistry local-registry:5002
 
 services:
-#   voter: 
-#     imageName: voter # without registry-host and tag
-#     imageTag: *defaultTag
-#     serviceName: voter
-#     servicePort: *defaultServicePort
-  ballot: 
-    imageName: ballot # without registry-host and tag
+  voter: 
+    imageName: voter # without registry-host and tag
     imageTag: *defaultTag
-    serviceName: "ballot"
+    serviceName: voter
     servicePort: *defaultServicePort
-#   electionCommission: 
-#     imageName: election-commission # without registry-host and tag
+#   ballot: 
+#     imageName: ballot # without registry-host and tag
 #     imageTag: *defaultTag
-#     serviceName: "ec"
+#     serviceName: "ballot"
 #     servicePort: *defaultServicePort
-  ecserver: 
-    imageName: ecserver # without registry-host and tag
+  electionCommission: 
+    imageName: election-commission # without registry-host and tag
     imageTag: *defaultTag
-    serviceName: "ecserver"
+    serviceName: "ec"
     servicePort: *defaultServicePort
+#   ecserver: 
+#     imageName: ecserver # without registry-host and tag
+#     imageTag: *defaultTag
+#     serviceName: "ecserver"
+#     servicePort: *defaultServicePort
