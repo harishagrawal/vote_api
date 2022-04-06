@@ -40,7 +40,7 @@ test-ecserver:
    run -e unit /scripts/test.yaml
 
 .PHONY: dockerise
-dockerise: build-ballot build-ecserver build-test
+dockerise: build-test build-ballot build-ecserver
 
 .PHONY: build-ballot
 build-ballot:
