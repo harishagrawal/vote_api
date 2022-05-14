@@ -40,10 +40,13 @@ test-ecserver:
    run -e unit /scripts/test.yaml
 
 .PHONY: dockerise
-dockerise: build-voter build-ballot build-ecserver build-ec build-test
+dockerise: build-ballot build-ecserver
 
 .PHONY: build-ballot
 build-ballot:
+	which docker
+	/usr/bin/docker images
+	/usr/bin/docker ps
 ifdef DOCKER_HOST
 	docker -H ${DOCKER_HOST} build -t ${BALLOT_IMG}:${IMAGE_TAG} -f ballot/Dockerfile ballot
 else
